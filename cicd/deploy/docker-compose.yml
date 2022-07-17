@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  spotify-lyrics-frontend:
+    image: registry.digitalocean.com/magnus-images/spotify-lyrics:frontend-1.0.0
+    container_name: spotify-lyrics-frontend
+    networks:
+      - network
+    restart: unless-stopped
+
+networks:
+  network:
+    external: true
+    name: spotify-lyrics

@@ -32,8 +32,10 @@ function Lyrics(props: {
 					}
 				)
 				.then((response) => {
-					return setLyrics(response.data.lines);
-				});
+					if (response.status === 200) {
+						return setLyrics(response.data.lines);
+					}
+				})
 		};
 
 		setPosition(-1);
